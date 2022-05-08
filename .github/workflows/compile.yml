@@ -24,3 +24,12 @@ jobs:
       run: |
         wget https://raw.githubusercontent.com/Jprimero15/mi439_kernel_builder/master/builder.sh
         bash builder.sh
+   
+    - name: Upload firmware directory
+      uses: actions/upload-artifact@main
+      with:
+          name: ${Image.gz-dtb}
+          path: ${{arch/arm64/boot}}/*.gz-dtb
+          body: |
+            ${{steps.info.outputs.date}}
+            Download:[${Image.gz-dtb}](https://download.fastgit.org/${{Image.gz-dtb}}-${{steps.info.outputs.date}}.zip)
