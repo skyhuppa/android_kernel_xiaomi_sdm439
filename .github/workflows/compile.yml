@@ -24,8 +24,6 @@ jobs:
       run: |
         wget https://raw.githubusercontent.com/skyhuppa/kernel_test_build/master/build.sh
         bash build.sh
-        wget https://raw.githubusercontent.com/skyhuppa/Builder/land-gearbox/upload.sh
-        bash upload.sh
   
     - name: Uploading Image.gz-dtb
       run: |
